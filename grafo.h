@@ -1,28 +1,33 @@
-#ifndef GRAFO_H_
-#define GRAFO_H_
+#ifndef GRAFO_GRAFO_H_
+#define GRAFO_GRAFO_H_
+
+#include "vertice.h"
 
 
-#define MAX_VERTICES 50
-
-#define TRUE 1
-#define FALSE 0
-
-typedef struct vertices vertice_t;
-typedef struct arestas aresta_t;
 typedef struct grafos grafo_t;
 
-grafo_t *cria_grafo(int vertices);
-void libera_grafo (grafo_t *g);
-int cria_adjacencia_nao_dir(grafo_t *g, int u, int v, int peso);
+/* Cria um novo grafo com id */
+grafo_t *cria_grafo(int id);
 
-int rem_adjacencia(grafo_t *g, int u, int v);
+/* Adiciona um vertice ao grafo */
+vertice_t* grafo_adicionar_vertice(grafo_t *grafo, char *name);
 
-/* Retorna se existe adjacencia entre os vertices u e v */
-int adjacente(grafo_t *g, int u, int v);
+/* Procura um vertice no grafo com id numerico */
+vertice_t* procura_vertice(grafo_t *grafo, char *name);
 
-void define_name (grafo_t *grafo, int id, char *name);
-
+/* Exporta o grafo utilizando a linguagem dot */
 void exportar_grafo_dot(const char *filename, grafo_t *grafo);
 
+/* Libera memoria utilizada pelo grafo */
+void libera_grafo (grafo_t *grafo);
 
-#endif /* GRAFO_H_ */
+
+/* Retorna TRUE se vertice_procurado estiver no conjunto Q*/
+int busca_vertice(lista_enc_t *lista, vertice_t *vertice_procurado);
+
+
+void print_vertice (grafo_t *grafo);
+
+lista_enc_t* lista_de_vertices(grafo_t*grafo);
+
+#endif /* GRAFO_GRAFO_H_ */
