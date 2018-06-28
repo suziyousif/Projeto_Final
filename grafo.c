@@ -5,8 +5,8 @@
 #include <string.h>
 #include "grafo.h"
 #include "vertice.h"
-#include "../lista_enc/lista_enc.h"
-#include "../lista_enc/no.h"
+#include "lista_enc.h"
+#include "no.h"
 
 
 #define FALSE 0
@@ -123,11 +123,11 @@ void adiciona_adjacentes(grafo_t *grafo, vertice_t *vertice_1, vertice_t *vertic
     aresta = cria_aresta(vertice_2, vertice_1, peso);
     adiciona_aresta(vertice_2, aresta);
 
-#ifdef DEBUG
-		printf("\tvertice: %s\n", vertice_get_name(vertice_1));
-		printf("\tsucessor: %s\n", vertice_get_name(vertice_2));
-		printf("\tpeso: %f\n", peso);
-#endif
+    #ifdef DEBUG
+        printf("\tvertice: %s\n", vertice_get_name(vertice_1));
+        printf("\tsucessor: %s\n", vertice_get_name(vertice_2));
+        printf("\tpeso: %f\n", peso);
+    #endif
 
 }
 

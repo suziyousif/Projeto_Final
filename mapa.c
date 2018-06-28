@@ -4,6 +4,7 @@
 #include "grafo.h"
 #define TAM_BUFFER 128
 #include <string.h>
+
 void ler_arquivo (char *nome_arquivo){
 
     int ret;
