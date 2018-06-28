@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "mapa.h"
+#include "grafo.h"
+#define TAM_BUFFER 128
+#include <string.h>
+void ler_arquivo (char *nome_arquivo){
+
+    int ret;
+    char buffer_string[TAM_BUFFER];
+    char buffer_name_1 [64][64];
+    char buffer_name_2 [64];
+    float peso;
+    int qtd;
+    int size = 0;
+    grafo_t *grafo;
+    int i=0;
+    int j =1;
+    //abrir o arquivo
+	FILE *fp = fopen(nome_arquivo, "r");
+		if (fp == NULL){
+			perror("Erro em main: fopen");
+			exit(EXIT_FAILURE);
+		}
+    while(fgets(buffer_string,128,fp)!= NULL){
+        ret = sscanf(buffer_string,"%46[^;]; %46[^;]; %f\n", buffer_name_1[i], buffer_name_1[j], &peso);
+        if (ret != 3){
+                perror("sscanf:");
+                exit(1);
+        }
+        i = i + 2;
+        j = j + 2;
+    }
+    qtd = n_cidades(buffer_name_1[], 32);
+   // for (i=0; i<32; i++)
+       //printf("%s\n",buffer_name_1[i]);
+    printf("%d", qtd);
+    grafo = cria_grafo(size);
+
+  //  rewind(fp);
+    //pegar a linha
+	/*while (fgets(buffer_string,128,fp)!= NULL){
+        ret = sscanf(buffer_string,"%46[^;]; %46[^;]; %f\n", buffer_name_1, buffer_name_2, &peso);
+            if (ret != 3){
+                perror("sscanf:");
+                exit(1);
+            }
+//        define_name(grafo, )]
+        //printf("%.2f\n", peso);
+	}
+*/
+    fclose(fp);
+}
+
+int n_cidades (char **vetor, int tamanho){
+    int i, j;
+    int qtd_cidades = tamanho;
+    for (i = 0; i < tamanho; i++){
+        for(j = 1; j < tamanho; j++){
+            if (strcmp(vetor[i], vetor[j]) && !strcmp(vetor[j], "buscado")){
+                strcpy(vetor[j], "buscado");
+                qtd_cidades++;
+            }
+        }
+
+    }
+    return qtd_cidades;
+
+}

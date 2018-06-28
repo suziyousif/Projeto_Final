@@ -1,0 +1,16 @@
+Ponta das Canas; Jurere; 16.5
+Ponta das Canas; Ingleses; 10.7
+Ponta das Canas; Santinho; 13.1
+Jurere; Santo Antonio de Lisboa; 15.4
+Santo Antonio de Lisboa; Santinho; 26.1
+Ingleses; Santinho; 6.0
+Santo Antonio de Lisboa; Joao Paulo; 10.0
+Santo Antonio de Lisboa; Monte Verde; 8.7
+Santo Antonio de Lisboa; Rio Tavares; 23.4
+Santinho; Joao Paulo; 27.8
+Santinho; Monte Verde; 26.5
+Joao Paulo; Rio Tavares; 15.2
+Joao Paulo; Monte Verde; 2.9
+Joao Paulo; Ribeirao da Ilha; 28.8
+Monte Verde; Rio Tavares; 17.2
+Rio Tavares; Ribeirao da Ilha; 17.0
