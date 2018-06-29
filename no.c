@@ -40,7 +40,7 @@ void liga_nos (no_t *fonte, no_t *destino)
 void desliga_no (no_t *no)
 {
     if (no == NULL) {
-        fprintf(stderr,"desliga_nos: ponteiros invalidos");
+        fprintf(stderr,"liga_nos: ponteiros invalidos");
         exit(EXIT_FAILURE);
     }
 
@@ -51,7 +51,7 @@ void desliga_no (no_t *no)
 void desliga_no_anterior (no_t *no)
 {
     if (no == NULL) {
-        fprintf(stderr,"desliga_no_anterior: ponteiros invalidos");
+        fprintf(stderr,"liga_nos: ponteiros invalidos");
         exit(EXIT_FAILURE);
     }
 
@@ -61,7 +61,7 @@ void desliga_no_anterior (no_t *no)
 void desliga_no_proximo (no_t *no)
 {
     if (no == NULL) {
-        fprintf(stderr,"desliga_no_proximo: ponteiros invalidos");
+        fprintf(stderr,"liga_nos: ponteiros invalidos");
         exit(EXIT_FAILURE);
     }
 
@@ -72,7 +72,7 @@ void desliga_no_proximo (no_t *no)
 void *obter_dado (no_t *no)
 {
     if (no == NULL) {
-        fprintf(stderr,"obter_dado: ponteiros invalidos");
+        fprintf(stderr,"liga_nos: ponteiros invalidos");
         exit(EXIT_FAILURE);
     }
 
@@ -82,7 +82,7 @@ void *obter_dado (no_t *no)
 no_t *obtem_proximo (no_t *no)
 {
     if (no == NULL) {
-        fprintf(stderr,"obtem_proximo: ponteiros invalidos");
+        fprintf(stderr,"liga_nos: ponteiros invalidos");
         exit(EXIT_FAILURE);
     }
 
@@ -92,7 +92,7 @@ no_t *obtem_proximo (no_t *no)
 no_t *obtem_anterior (no_t *no)
 {
     if (no == NULL) {
-        fprintf(stderr,"obtem_anterior: ponteiros invalidos");
+        fprintf(stderr,"liga_nos: ponteiros invalidos");
         exit(EXIT_FAILURE);
     }
 

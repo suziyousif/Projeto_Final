@@ -19,6 +19,6 @@ void imprimi_lista_tras (lista_enc_t *lista);
 /* Retorna o dado de um no removido*
  * no_removido é liberado da memoória  */
 void *remover_no(lista_enc_t *lista, no_t *no_removido);
-
+void libera_lista(lista_enc_t *lista);
 
 #endif // LISTA_ENC_H_INCLUDED

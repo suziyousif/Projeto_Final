@@ -1,16 +1,55 @@
-Ponta das Canas; Jurere; 16.5
-Ponta das Canas; Ingleses; 10.7
-Ponta das Canas; Santinho; 13.1
-Jurere; Santo Antonio de Lisboa; 15.4
-Santo Antonio de Lisboa; Santinho; 26.1
-Ingleses; Santinho; 6.0
-Santo Antonio de Lisboa; Joao Paulo; 10.0
-Santo Antonio de Lisboa; Monte Verde; 8.7
-Santo Antonio de Lisboa; Rio Tavares; 23.4
-Santinho; Joao Paulo; 27.8
-Santinho; Monte Verde; 26.5
-Joao Paulo; Rio Tavares; 15.2
-Joao Paulo; Monte Verde; 2.9
-Joao Paulo; Ribeirao da Ilha; 28.8
-Monte Verde; Rio Tavares; 17.2
-Rio Tavares; Ribeirao da Ilha; 17.0
+Lagoinha do Norte; Ponta das Canas; 3.5
+Lagoinha do Norte; Praia Brava; 2.7
+Praia Brava; Ingleses; 12.6
+Praia Brava; Ponta das Canas; 4.2
+Ponta das Canas; Cachoeira do Bom Jesus; 3.1
+Cachoeira do Bom Jesus; Ingleses; 13.2
+Cachoeira do Bom Jesus; Canasvieiras; 3.1
+Canasvieiras; Vargem Pequena; 5.7
+Canasvieiras; Vargem Grande; 7.7
+Canasvieiras; Jurere; 9.5
+Jurere; Forte; 4.4
+Jurere; Daniela; 2.1
+Jurere; Ratones; 8.6
+Jurere; Santo Antonio de Lisboa; 9.5
+Ingleses; Vargem Grande; 8.6
+Ingleses; Santinho; 6.3
+Vargem Grande; Vargem Pequena; 4.1
+Vargem Pequena; Ratones; 7.3
+Ratones; Santo Antonio de Lisboa; 13.9
+Santo Antonio de Lisboa; Sambaqui; 9.9
+Santo Antonio de Lisboa; Cacupe; 5.8
+Santo Antonio de Lisboa; Saco Grande; 4.0
+Saco Grande; Cacupe; 4.2
+Saco Grande; Monte Verde; 5.2
+Monte Verde; Cacupe; 6.3
+Monte Verde; Joao Paulo; 2.9
+Joao Paulo; Trindade; 7.2
+Trindade; Centro; 4.3
+Trindade; Saco dos Limoes; 1.9
+Trindade; Carvoeira; 1.4
+Trindade; Lagoa da Conceicao; 8.7
+Centro; Jose Mendes; 3.2
+Jose Mendes; Pantanal; 4.9
+Pantanal; Carvoeira; 1.7
+Pantanal; Saco dos Limoes; 2.9
+Saco dos Limoes; Carvoeira; 0.65
+Lagoa da Conceicao; Canto dos Aracas; 2.4
+Lagoa da Conceicao; Canto da Lagoa; 3.1
+Canto da Lagoa; Rio Tavares; 4.3
+Rio Tavares; Praia da Joaquina; 9.2
+Rio Tavares; Carianos; 11.4
+Rio Tavares; Campeche; 6.1
+Praia da Joaquina; Barra da Lagoa; 7.2
+Barra da Lagoa; Santinho; 22.4
+Santinho; Vargem Grande; 10.9
+Campeche; Carianos; 9.0
+Campeche; Tapera; 6.6
+Campeche; Morro das Pedras; 5.5
+Morro das Pedras; Tapera; 6.4
+Ribeirao da Ilha; Morro das Pedras; 8.1
+Morro das Pedras; Praia do Matadeiro; 5.7
+Praia do Matadeiro; Armacao do Pantano do Sul; 3.2
+Armacao do Pantano do Sul; Ribeirao da Ilha; 15.4
+Ribeirao da Ilha; Tapera; 2.9
+Tapera; Carianos; 15.3

@@ -3,18 +3,20 @@
 
 #include "lista_enc.h"
 
-
+/* Exporta os tipos de dados do vertice e arestas */
 typedef struct vertices vertice_t;
 typedef struct arestas arestas_t;
 
 /* Tipo enum o status das arestas: utilizado para exportação do DOT */
 typedef enum status_aresta { VAZIO, EXPORTADA } status_aresta_t;
 
-
+/* Cria um novo vertice com id */
 vertice_t *cria_vertice(char *name);
+
+/* Cria uma nova aresta */
 arestas_t *cria_aresta(vertice_t *fonte, vertice_t *destino, float peso);
 
-
+/* Obtem id de um vertice */
 char* vertice_get_name(vertice_t *vertice);
 
 /* Adiciona uma aresta a um grafo */
@@ -39,20 +41,39 @@ void aresta_set_status(arestas_t *aresta, status_aresta_t status);
 status_aresta_t aresta_get_status (arestas_t *aresta);
 
 
-/* Configura membro id_grupo da struct vertice
+/* Configura membro id_dist da struct vertice
  * Ver: struct vertices */
-void vertice_set_grupo(vertice_t *vertice, int grupo);
+void vertice_set_dist(vertice_t *vertice, float dist);
 
 /* Configura membro pai da struct vertice
  * Ver: struct vertices */
 void vertice_set_pai(vertice_t *vertice, vertice_t *pai);
 
 
-/* Obtem membro id_grupo da struct vertice
+/* Obtem membro id_dist da struct vertice
  * Ver: struct vertices */
-int vertice_get_grupo(vertice_t *vertice);
+float vertice_get_dist(vertice_t *vertice);
 
 
 vertice_t * vertice_get_pai(vertice_t *vertice);
+
+/* Configura membro dist da struct vertice
+ * Ver: struct vertices */
+//void vertice_set_dist(vertice_t *vertice, int dist);
+
+/* Obtem valor dist da struct vertice
+ * Ver: struct vertices  */
+//int vertice_get_dist(vertice_t *vertice);
+
+/* Obtem vertice antecessor do menor caminho.
+ * Configurado por Dijkstra  */
+//vertice_t *vertice_get_antec_caminho(vertice_t *vertice);
+
+/* Configura vertice antessor do menor caminho */
+//void vertice_set_antec_caminho(vertice_t *vertice, vertice_t *antecessor);
+
+/* Retorna o comprimento de dois vertices adjacentes */
+//int vertices_comprimento(vertice_t *fonte, vertice_t *destino);
+
 
 #endif /* GRAFO_VERTICE_H_ */

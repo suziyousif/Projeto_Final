@@ -11,7 +11,7 @@ struct vertices {
 	lista_enc_t *arestas;
 
 	/* Informacoes para componentes conexos */
-	int id_grupo;
+	float dist;
 	vertice_t* pai;
 
 };
@@ -47,7 +47,7 @@ vertice_t *cria_vertice(char *name)
     strncpy(p->name, name, tamanho + 1);
 	p->arestas = cria_lista_enc();
 	//------------------
-	p->id_grupo = -1;
+	p->dist = -1;
 	p->pai = NULL;
 
 	return p;
@@ -171,24 +171,24 @@ void aresta_set_status(arestas_t *aresta, status_aresta_t status)
 }
 
 /*------------------------------------------*/
-void vertice_set_grupo(vertice_t *vertice, int grupo) {
+void vertice_set_dist(vertice_t *vertice, float dist) {
 
 	if (vertice == NULL){
-			fprintf(stderr, "vertice_set_grupo: vertice invalido\n");
+			fprintf(stderr, "vertice_set_dist: vertice invalido\n");
 			exit(EXIT_FAILURE);
 	}
 
-	vertice->id_grupo = grupo;
+	vertice->dist = dist;
 }
 
-int vertice_get_grupo(vertice_t *vertice) {
+float vertice_get_dist(vertice_t *vertice) {
 
 	if (vertice == NULL){
-			fprintf(stderr, "vertice_get_grupo: vertice invalido\n");
+			fprintf(stderr, "vertice_get_dist: vertice invalido\n");
 			exit(EXIT_FAILURE);
 	}
 
-	return vertice->id_grupo;
+	return vertice->dist;
 }
 
 void vertice_set_pai(vertice_t *vertice, vertice_t *pai) {
@@ -205,9 +205,70 @@ void vertice_set_pai(vertice_t *vertice, vertice_t *pai) {
 vertice_t * vertice_get_pai(vertice_t *vertice) {
 
 	if (vertice == NULL){
-			fprintf(stderr, "vertice_get_grupo: vertice invalido\n");
+			fprintf(stderr, "vertice_get_dist: vertice invalido\n");
 			exit(EXIT_FAILURE);
 	}
 
 	return vertice->pai;
 }
+
+
+
+
+//void vertice_set_dist(vertice_t *vertice, int dist) {
+//
+//	if (vertice == NULL){
+//			fprintf(stderr, "vertice_set_dist: vertice invalido\n");
+//			exit(EXIT_FAILURE);
+//	}
+//
+//	vertice->dist =  dist;
+//}
+//
+//int vertice_get_dist(vertice_t *vertice){
+//
+//	if (vertice == NULL){
+//			fprintf(stderr, "vertice_get_dist: vertice invalido\n");
+//			exit(EXIT_FAILURE);
+//	}
+//
+//	return vertice->dist;
+//}
+//
+//int vertices_comprimento(vertice_t *fonte, vertice_t *destino)
+//{
+//	arestas_t *aresta;
+//
+//	if (fonte == NULL || destino == NULL){
+//		fprintf(stderr, "vertices_comprimento: vertices invalidos\n");
+//		exit(EXIT_FAILURE);
+//	}
+//
+//	aresta = procurar_adjacente(fonte, destino);
+//
+//	if (aresta == NULL) {
+//		fprintf(stderr, "vertices_comprimento: vertices nao adjacentes\n");
+//		exit(EXIT_FAILURE);
+//	}
+//
+//	return aresta->peso;
+//}
+//
+//void vertice_set_antec_caminho(vertice_t *vertice, vertice_t *antecessor){
+//
+//	if (vertice == NULL || antecessor == NULL){
+//		fprintf(stderr, "vertice_set_antec_caminho: vertices invalidos\n");
+//		exit(EXIT_FAILURE);
+//	}
+//
+//	vertice->antecessor_caminho = antecessor;
+//}
+//
+//vertice_t *vertice_get_antec_caminho(vertice_t *vertice) {
+//	if (vertice == NULL){
+//		fprintf(stderr, "vertice_get_antec_aminho: vertice invalidos\n");
+//		exit(EXIT_FAILURE);
+//	}
+//
+//	return vertice->antecessor_caminho;
+//}

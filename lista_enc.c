@@ -64,7 +64,6 @@ void add_cauda(lista_enc_t *lista, no_t* elemento)
         lista->cauda = elemento;
         lista->tamanho++;
    }
-
 }
 
 void imprimi_lista (lista_enc_t *lista)
@@ -118,6 +117,7 @@ no_t *obter_cabeca(lista_enc_t *lista){
 	        fprintf(stderr,"obter_cabeca: ponteiros invalidos");
 	        exit(EXIT_FAILURE);
 	    }
+
 	return lista->cabeca;
 }
 
@@ -237,5 +237,22 @@ void *remover_no(lista_enc_t *lista, no_t *no_removido)
 	}
 
 	return dado;
+}
+
+void libera_lista(lista_enc_t *lista){
+
+    if (lista == NULL)
+    {
+        fprintf(stderr, "Erro desalocando memoria da lista, ponteiro invalido!");
+        exit(EXIT_FAILURE);
+    }
+    no_t *meu_no = obter_cabeca(lista);
+    while (meu_no!=NULL)
+    {
+        no_t *proximo=obtem_proximo(meu_no);
+        free(meu_no);
+        meu_no = proximo;
+    }
+    free(lista);
 }
 
