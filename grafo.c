@@ -115,6 +115,58 @@ vertice_t* dequeue_menor_dist(fila_t *fila){
 	return vertice_min_dist;
 }
 
+void imprimir_caminho(grafo_t *grafo, lista_enc_t *lista_ambulancias, char *destino)
+{
+    if (grafo == NULL){
+		fprintf(stderr, "imprimir_caminho: grafo invalido\n");
+		exit(EXIT_FAILURE);
+	}
+	vertice_t *vertice_destino = procura_vertice(grafo, destino);
+	if (vertice_destino == NULL){
+        printf("\t\tDestino nao identificado!\n");
+        libera_grafo(grafo);
+        libera_local_ambulancias(lista_ambulancias);
+        exit(EXIT_FAILURE);
+	}
+
+	float dist = 0.0;
+	float dist_ant = 0.0;
+
+	no_t *no = obter_cabeca(lista_ambulancias);
+	no = obter_cabeca(lista_ambulancias);
+	vertice_t *v = procura_vertice(grafo, get_local(obter_dado(no)));
+	vertice_t *v_ambulancia = v;
+    Dijkstra(grafo, v);
+    dist_ant = vertice_get_dist(vertice_destino);
+    no = obtem_proximo(no);
+	while(no){
+        vertice_t *v = procura_vertice(grafo, get_local(obter_dado(no)));
+        Dijkstra(grafo, v);
+        dist = vertice_get_dist(vertice_destino);
+        if(dist < dist_ant){
+            dist_ant = dist;
+            v_ambulancia = v;
+        }
+        no = obtem_proximo(no);
+	}
+
+    Dijkstra(grafo, vertice_destino);
+    #ifdef DEBUG
+    printf("%s\n", vertice_get_name(v_ambulancia));
+    #endif // DEBUG
+	if (dist_ant == 0)
+        printf("Local da ambulancia: %s \na ambulancia chegara em aproximadamente 2min\n", vertice_get_name(v_ambulancia));
+    else{
+        printf("\t\tCaminho da ambulancia:\n");
+        while (vertice_get_pai(v_ambulancia) != NULL){
+            printf("\t\t->%s\n", vertice_get_name(v_ambulancia));
+            v_ambulancia = vertice_get_pai(v_ambulancia);
+        }
+        printf("\t\t->%s\n", destino);
+        printf("\nDistancia da ambulancia: %0.2fKm\nChegara em aproximadamente: %0.2fmin \n", dist_ant, (dist_ant*60)/VELOCIDADE_AMB);
+    }
+}
+
 grafo_t *cria_grafo(int id)
 {
 	grafo_t *p = NULL;

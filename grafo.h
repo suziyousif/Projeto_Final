@@ -45,4 +45,5 @@ lista_enc_t* componentes_conexos(grafo_t *grafo);
 void print_vertice (grafo_t *grafo);
 
 void Dijkstra(grafo_t *grafo, vertice_t *fonte);
+void imprimir_caminho(grafo_t *grafo, lista_enc_t *lista_ambulancias, char *destino);
 #endif /* GRAFO_GRAFO_H_ */

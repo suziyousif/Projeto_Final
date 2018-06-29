@@ -16,29 +16,27 @@
 
 int main(void) {
 
-	grafo_t *g;
-	g = ler_arquivo("mapa.txt");
-    exportar_grafo_dot("teste.txt", g);
-	vertice_t *vertice;
-	//vertice_t *vertice2;
-	//arestas_t *aresta;
-	vertice = procura_vertice (g, "Ponta das Canas");
-	//vertice2 = procura_vertice (g, "Ponta das Canas");
-	// printf("v2 = %s\n", vertice_get_name(vertice2));
-	//printf("v1 = %s\n", vertice_get_name(vertice));
-   // aresta = procurar_adjacente(vertice2, vertice);
+    int i = 1;
 
-    //printf("%f\n", aresta_get_peso(aresta));
+    printf("\t   Bem Vindo a Central de Emergencia\n\n");
+    printf("Para solicitar uma ambulancia, digite 1\nCaso queira sair da central, digite 2\n->");
+    scanf("%d", &i);
+    getchar();
+    if(i == 1){
+        grafo_t *g;
+        g = ler_arquivo("mapa.txt");
+        //exportar_grafo_dot("teste.dot", g);
+        char destino[TAM_BUFFER];
+        printf("\nDigite o local de sua emergencia e mandaremos a ambulancia mais proxima ate voce\n\t\t");
+        fflush(stdin);
+        scanf("%[^\n]", destino);
+        printf("\n");
 
-
-  //  Dijkstra(g, vertice);
-
-    //print_vertice(g);
-    lista_enc_t *lista_amb;
-    lista_amb = ler_arquivo_ambulancias("garagem_ambulancias.txt");
-    Dijkstra(g, vertice);
-    libera_grafo(g);
-    libera_local_ambulancias(lista_amb);
-
+        lista_enc_t *lista_amb;
+        lista_amb = ler_arquivo_ambulancias("garagem_ambulancias.txt");
+        imprimir_caminho(g, lista_amb, destino);
+        libera_grafo(g);
+        libera_local_ambulancias(lista_amb);
+    }
 	return EXIT_SUCCESS;
 }
