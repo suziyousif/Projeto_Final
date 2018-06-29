@@ -13,7 +13,7 @@ Por fim, era necessário imprimir o caminho da ambulância mais próxima do loca
 Inicialmente irá aparecer na tela uma menu para o usuário decidir o que ele irá fazer: sair do programa ou solicitar uma ambulância. No caso da escolha deste ultimo o usuário de verá digitar um bairro de florianópolis (que cotenha no lista) da seguinte maneira:
           ```
           Monte Verde
-          ```       Com o inicial maiúscula.
+          ```       Com iniciais maiúsculas.
 Para este exemplo, o caminho feito pela ambulância será: 
         ```
         
